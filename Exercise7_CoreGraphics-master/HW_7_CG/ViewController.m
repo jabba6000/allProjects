@@ -38,6 +38,7 @@
     scroll.contentSize = CGSizeMake (2000, 414);
     scroll.bounces = NO;
     
+    
     self.scrView = scroll;
     [self.view addSubview:scroll];
     

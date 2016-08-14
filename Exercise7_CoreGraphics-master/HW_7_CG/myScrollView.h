@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface myScrollView : UIScrollView
+@interface myScrollView : UIScrollView <UIScrollViewDelegate>
 {
 @public
 int x;

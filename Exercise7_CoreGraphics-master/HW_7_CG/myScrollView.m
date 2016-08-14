@@ -12,7 +12,6 @@
     
 
 - (void)drawRect:(CGRect)rect {
-    
 
     //ОСИ КООРДИНАТ
     
@@ -52,20 +51,23 @@
     CGContextSetStrokeColorWithColor(context,
                                      [UIColor blueColor].CGColor);
     //массив с шаблоном черточек (их ширины)
-    CGFloat dashArray[] = {1,[self setWidthOfSpace:x]};
     
-    /*следующая функция имеет 4 параметра:
-     1) контекст,
-     2) фаза - определяет фазу (из массива), с которой следует начать отрисовку черт на линии
-     3) массив, где указана ширина каждой из черточек
-     4) количество элементов в массиве (2)
-     */
-    CGContextSetLineDash(context, 2, dashArray, 2);
-    CGContextMoveToPoint(context, 30, 200);
-    CGContextAddLineToPoint(context, 630, 200);
-    CGContextStrokePath(context);
-    
-    [self setNumberOfVerticalLines:x];
+    if (x!=0){
+        CGFloat dashArray[] = {1,[self setWidthOfSpace:x]};
+        
+        /*следующая функция имеет 4 параметра:
+         1) контекст,
+         2) фаза - определяет фазу (из массива), с которой следует начать отрисовку черт на линии
+         3) массив, где указана ширина каждой из черточек
+         4) количество элементов в массиве (2)
+         */
+        CGContextSetLineDash(context, 2, dashArray, 2);
+        CGContextMoveToPoint(context, 30, 200);
+        CGContextAddLineToPoint(context, 630, 200);
+        CGContextStrokePath(context);
+        
+        [self setNumberOfVerticalLines:x];
+    }
 }
 
 
@@ -73,8 +75,15 @@
     
     CGContextRef context = UIGraphicsGetCurrentContext();
 
-    [self setWidthOfSpace:x];
     
+//    if(x==0)
+//    {
+//        NSLog(@"НОЛЬ!");
+//        goto fire;
+//    }
+    
+    [self setWidthOfSpace:x];
+
     if (x==1) // если только одна вертикальная линия, то отыгрывает это
     {
        char *txt = [self setTitle]; //получаем из метода надпись для Тайтла
@@ -137,6 +146,7 @@
             counter++;
         }
     }
+//    fire: nil;
 }
 
 //Здесь рассчитывается расстояние между вертикальными линиями
@@ -153,5 +163,11 @@
     char *txt = "Title";
     return txt;
 }
+
+//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate:(UIScrollView *)scrollView
+//{
+//    [scrollView setNeedsDisplay];
+//}
+
 
 @end
