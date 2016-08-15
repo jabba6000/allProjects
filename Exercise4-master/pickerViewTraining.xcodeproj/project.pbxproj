@@ -13,7 +13,8 @@
 		162F37AD1CC50E6900F93B7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162F37AB1CC50E6900F93B7A /* Main.storyboard */; };
 		162F37AF1CC50E6900F93B7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 162F37AE1CC50E6900F93B7A /* Assets.xcassets */; };
 		162F37B21CC50E6900F93B7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162F37B01CC50E6900F93B7A /* LaunchScreen.storyboard */; };
-		164083261D4E2BFA000FF213 /* ViewController+ImnputViewLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 164083251D4E2BFA000FF213 /* ViewController+ImnputViewLogic.m */; };
+		16FA2DD71D60FA96002EE747 /* MyPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FA2DD61D60FA96002EE747 /* MyPickerView.m */; };
+		16FA2DDA1D611123002EE747 /* Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FA2DD91D611123002EE747 /* Data.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +28,10 @@
 		162F37AE1CC50E6900F93B7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		162F37B11CC50E6900F93B7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		162F37B31CC50E6900F93B7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		164083241D4E2BFA000FF213 /* ViewController+ImnputViewLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+ImnputViewLogic.h"; sourceTree = "<group>"; };
-		164083251D4E2BFA000FF213 /* ViewController+ImnputViewLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+ImnputViewLogic.m"; sourceTree = "<group>"; };
+		16FA2DD51D60FA96002EE747 /* MyPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPickerView.h; sourceTree = "<group>"; };
+		16FA2DD61D60FA96002EE747 /* MyPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPickerView.m; sourceTree = "<group>"; };
+		16FA2DD81D611123002EE747 /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
+		16FA2DD91D611123002EE747 /* Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +68,10 @@
 				162F37A61CC50E6900F93B7A /* AppDelegate.m */,
 				162F37A81CC50E6900F93B7A /* ViewController.h */,
 				162F37A91CC50E6900F93B7A /* ViewController.m */,
-				164083241D4E2BFA000FF213 /* ViewController+ImnputViewLogic.h */,
-				164083251D4E2BFA000FF213 /* ViewController+ImnputViewLogic.m */,
+				16FA2DD51D60FA96002EE747 /* MyPickerView.h */,
+				16FA2DD61D60FA96002EE747 /* MyPickerView.m */,
+				16FA2DD81D611123002EE747 /* Data.h */,
+				16FA2DD91D611123002EE747 /* Data.m */,
 				162F37AB1CC50E6900F93B7A /* Main.storyboard */,
 				162F37AE1CC50E6900F93B7A /* Assets.xcassets */,
 				162F37B01CC50E6900F93B7A /* LaunchScreen.storyboard */,
@@ -154,9 +159,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16FA2DDA1D611123002EE747 /* Data.m in Sources */,
+				16FA2DD71D60FA96002EE747 /* MyPickerView.m in Sources */,
 				162F37AA1CC50E6900F93B7A /* ViewController.m in Sources */,
 				162F37A71CC50E6900F93B7A /* AppDelegate.m in Sources */,
-				164083261D4E2BFA000FF213 /* ViewController+ImnputViewLogic.m in Sources */,
 				162F37A41CC50E6900F93B7A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,17 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyPickerView.h"
+#import "Data.h"
 
-@interface ViewController : UIViewController <UITextFieldDelegate>
-{
-    UIPickerView *myPickerView;
-    
-    UITextField     *textField;
-    NSMutableArray  *metricArray;
-    NSArray  *imperialArrayFoot;
-    NSArray  *imperialArrayInch;
-    BOOL    isMetric;
-    NSMutableString *textFieldValue; //строка для сохранения значения ТекстФиелд
-}
+@interface ViewController : UIViewController <UITextFieldDelegate, UIPickerViewDelegate>
+
 @end
 
