@@ -10,4 +10,6 @@
 
 @interface myCurve : UIView
 
+@property (strong, nonatomic) NSMutableArray *pointsToDraw;
+
 @end

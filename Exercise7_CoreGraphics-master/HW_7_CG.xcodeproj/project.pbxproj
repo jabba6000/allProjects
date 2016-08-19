@@ -15,6 +15,7 @@
 		163815D81CFD9AD6009D2DD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 163815D61CFD9AD6009D2DD8 /* LaunchScreen.storyboard */; };
 		168395451CFF460C003F0A93 /* myScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 168395441CFF460C003F0A93 /* myScrollView.m */; };
 		1683954B1CFF55A8003F0A93 /* myCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = 1683954A1CFF55A8003F0A93 /* myCurve.m */; };
+		16A66D531D67319D000BB4A4 /* MySlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A66D521D67319D000BB4A4 /* MySlider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		168395441CFF460C003F0A93 /* myScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myScrollView.m; sourceTree = "<group>"; };
 		168395491CFF55A8003F0A93 /* myCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myCurve.h; sourceTree = "<group>"; };
 		1683954A1CFF55A8003F0A93 /* myCurve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myCurve.m; sourceTree = "<group>"; };
+		16A66D511D67319D000BB4A4 /* MySlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySlider.h; sourceTree = "<group>"; };
+		16A66D521D67319D000BB4A4 /* MySlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySlider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				163815CC1CFD9AD6009D2DD8 /* AppDelegate.m */,
 				163815CE1CFD9AD6009D2DD8 /* ViewController.h */,
 				163815CF1CFD9AD6009D2DD8 /* ViewController.m */,
+				16A66D511D67319D000BB4A4 /* MySlider.h */,
+				16A66D521D67319D000BB4A4 /* MySlider.m */,
 				164083271D4E5399000FF213 /* Canvas */,
 				163815D11CFD9AD6009D2DD8 /* Main.storyboard */,
 				163815D41CFD9AD6009D2DD8 /* Assets.xcassets */,
@@ -169,6 +174,7 @@
 			files = (
 				1683954B1CFF55A8003F0A93 /* myCurve.m in Sources */,
 				163815D01CFD9AD6009D2DD8 /* ViewController.m in Sources */,
+				16A66D531D67319D000BB4A4 /* MySlider.m in Sources */,
 				168395451CFF460C003F0A93 /* myScrollView.m in Sources */,
 				163815CD1CFD9AD6009D2DD8 /* AppDelegate.m in Sources */,
 				163815CA1CFD9AD6009D2DD8 /* main.m in Sources */,

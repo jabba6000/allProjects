@@ -10,24 +10,31 @@
 
 @implementation myCurve
 
+
 - (void)drawRect:(CGRect)rect {
     
-    CGContextRef context = UIGraphicsGetCurrentContext();
+    //получаем количество точек из массива
+    int numberOfPoints = [_pointsToDraw count];
     
-    //СИНУСОИДА отрисовка
+    CGContextRef context = UIGraphicsGetCurrentContext();
+
     CGContextSetLineWidth(context, 2.0);
     CGContextSetStrokeColorWithColor(context, [UIColor greenColor].CGColor);
-    int y;
-    for(int x=rect.origin.x; x < rect.size.width; x++)
+
+    CGPoint takeMeBack;
+
+    //цикл перебирает точки внутри массива и отрисовывает их на графике
+    for(int counter=0; counter!= numberOfPoints; counter++)
     {
-        y = ((rect.size.height/6) * sin(((x*4) % 360) * M_PI/180) +200);   //380 -это чтобы сместить вниз
-        if (x == 0) CGContextMoveToPoint(context, x, y);
-        else CGContextAddLineToPoint(context, x, y);
+        takeMeBack = [[_pointsToDraw objectAtIndex:counter ] CGPointValue];
+        if(counter ==0)
+        {
+            CGContextMoveToPoint(context, takeMeBack.x, takeMeBack.y);
+        }
+        else
+            CGContextAddLineToPoint(context, takeMeBack.x, takeMeBack.y);
     }
     CGContextStrokePath(context);
-    
-    [@"HELLO!" drawInRect:self.bounds withAttributes:@{}];
 }
-
 
 @end

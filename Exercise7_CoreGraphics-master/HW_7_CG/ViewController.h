@@ -9,11 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "myScrollView.h"
 #import "myCurve.h"
+#import "MySlider.h"
 
 @interface ViewController : UIViewController
-
-@property (strong, nonatomic) IBOutlet UISlider *mySlider;
-
 
 @end
 

@@ -21,42 +21,58 @@
     
     self.view.backgroundColor = [UIColor orangeColor];
     
-    //это чтобы повернуть слайдер на 90 градусов
-    _mySlider.transform = CGAffineTransformMakeRotation(M_PI_2);
-    CGAffineTransform trans = CGAffineTransformMakeRotation(M_PI_2);
-    _mySlider.transform =trans;
-    
+    //ПОДКЛЮЧАЕМ СЛАЙДЕР ДЛЯ РЕГУЛИРОВАНИЯ ЛИНИЙ СЕТКИ
+    MySlider *_mySlider = [[MySlider alloc] initWithFrame:CGRectMake(630, 180, 150, 50)];
+    [_mySlider rotateSliderAndSetItsValues];
+    [self.view addSubview:_mySlider];
+    //добавляем метод, который будет отыгрывать при взаимодействии со слайдером
     [_mySlider addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
-    _mySlider.minimumValue = 1.0;
-    _mySlider.maximumValue = 10.0;
-    _mySlider.continuous = YES;
-    _mySlider.value = 5.0;
     
-    // Здесь создается экземпляр катомного СкроллВью метода, в дров Рект методе которого
-    // уже нарисована вертикальная сетка, ось обсцисс и ось ординат (статичные)
+    // Здесь создается экземпляр каcтомного СкроллВью метода, в дров Рект методе которого
+    // уже нарисована вертикальная сетка, ось обсцисс и ось ординат (последние две - статичные)
     myScrollView    *scroll = [[myScrollView alloc] initWithFrame:CGRectMake(10, 0, 660, 414)];
     scroll.contentSize = CGSizeMake (2000, 414);
     scroll.bounces = NO;
-    
-    
     self.scrView = scroll;
     [self.view addSubview:scroll];
     
+    // создаем массив для точек, который передадим на график
+    // В принципе можно было сделать плавную линию, использую кривые Бизье
+    // Но в данном случае просто ломаная линия
+    NSMutableArray *arrayOfPoints = [NSMutableArray new];
+    [arrayOfPoints addObject:[NSValue valueWithCGPoint:CGPointMake(10, 250)]];
+    [arrayOfPoints addObject:[NSValue valueWithCGPoint:CGPointMake(100,150)]];
+    [arrayOfPoints addObject:[NSValue valueWithCGPoint:CGPointMake(150,200)]];
+    [arrayOfPoints addObject:[NSValue valueWithCGPoint:CGPointMake(200,330)]];
+    [arrayOfPoints addObject:[NSValue valueWithCGPoint:CGPointMake(250,300)]];
+    [arrayOfPoints addObject:[NSValue valueWithCGPoint:CGPointMake(300,20)]];
+    [arrayOfPoints addObject:[NSValue valueWithCGPoint:CGPointMake(450,390)]];
+    [arrayOfPoints addObject:[NSValue valueWithCGPoint:CGPointMake(600,150)]];
+    [arrayOfPoints addObject:[NSValue valueWithCGPoint:CGPointMake(800,400)]];
+    [arrayOfPoints addObject:[NSValue valueWithCGPoint:CGPointMake(1000,200)]];
+    [arrayOfPoints addObject:[NSValue valueWithCGPoint:CGPointMake(1200,250)]];
+    [arrayOfPoints addObject:[NSValue valueWithCGPoint:CGPointMake(1400,300)]];
+    [arrayOfPoints addObject:[NSValue valueWithCGPoint:CGPointMake(1600,20)]];
+    [arrayOfPoints addObject:[NSValue valueWithCGPoint:CGPointMake(1800,200)]];
+    [arrayOfPoints addObject:[NSValue valueWithCGPoint:CGPointMake(2000,150)]];
+
+    myCurve *curve = [[myCurve alloc] initWithFrame:CGRectMake(0,0,2000, 414)];
+    curve.backgroundColor = [UIColor clearColor];
+    //присваиваем массив точек свойству нашего компонента - кривой
+    curve.pointsToDraw = arrayOfPoints;
     /*
      Теперь создаем кривую-экземпляр кастомного класса от UIView
      и кидаем ее на view нашего ViewController
      */
-    myCurve *curve = [[myCurve alloc] initWithFrame:CGRectMake(0,0,2000, 414)];
-    curve.backgroundColor = [UIColor clearColor];
+
     [scroll addSubview:curve];
 }
 
-
+//метод для слайдера: меняет количество вертикальных линий в соотвествии со значением слайдера
 -(void)sliderAction:(id)sender
 {
     UISlider *slider = (UISlider*)sender;
     int value = slider.value;
-    NSLog(@"The value is %i", value);
 
     self.scrView->x = value; //доступ к внутренней переменной myScrollView через @public
     

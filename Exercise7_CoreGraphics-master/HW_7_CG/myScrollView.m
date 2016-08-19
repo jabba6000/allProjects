@@ -132,7 +132,7 @@
             CGContextSetTextDrawingMode(context, kCGTextFill);
             
             char number = allNumbers[counter];
-            printf("%c", number);
+//            printf("%c", number);
 
             //здесь мы составляем char строку из надписи TITLE и порядкового номера
             char str3[11];

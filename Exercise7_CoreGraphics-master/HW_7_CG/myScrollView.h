@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+/*
+ класс предназначен для отображения осей координат и вертикальной сетки
+ */
+
 @interface myScrollView : UIScrollView <UIScrollViewDelegate>
 {
 @public
