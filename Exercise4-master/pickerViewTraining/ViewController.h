@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "MyPickerView.h"
-#import "Data.h"
 
-@interface ViewController : UIViewController <UITextFieldDelegate, UIPickerViewDelegate>
+@interface ViewController : UIViewController <UITextFieldDelegate>
 
 @end
 

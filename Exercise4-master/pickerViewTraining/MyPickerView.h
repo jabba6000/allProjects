@@ -13,14 +13,21 @@
     Здесь мы унаследовались от UIPickerView и подписались на ДатаСорс протокол. Реализуем 2 ДатаСорс метода,а также 2 метода для конвертации величин из метрик в империал и обратно
  */
 
-@interface MyPickerView : UIPickerView <UIPickerViewDataSource>
+@interface MyPickerView : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (nonatomic) BOOL isMetric;
 @property(strong, nonatomic) NSMutableArray  *metricArray;
 @property(strong, nonatomic) NSArray  *imperialArrayFoot;
 @property(strong, nonatomic) NSArray  *imperialArrayInch;
 
+@property(strong, nonatomic) NSString *valueForTextField;
+
+-(void)createArraysWithData;
+
 -(NSString *)convertToImperial:(NSString *)string;
 -(NSString *)convertToMetric: (NSString *)string;
+
+-(NSString *)performConversionFromTextFieldToMetric: (NSString *)text;
+-(NSString *)performConversionFromTextFieldToImperial: (NSString *)text;
 
 @end
