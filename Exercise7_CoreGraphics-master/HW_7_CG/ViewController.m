@@ -60,11 +60,6 @@
     curve.backgroundColor = [UIColor clearColor];
     //присваиваем массив точек свойству нашего компонента - кривой
     curve.pointsToDraw = arrayOfPoints;
-    /*
-     Теперь создаем кривую-экземпляр кастомного класса от UIView
-     и кидаем ее на view нашего ViewController
-     */
-
     [scroll addSubview:curve];
 }
 
